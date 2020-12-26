@@ -7,8 +7,8 @@ import threading
 
 from globalStuff import GB
 from consoleManager import CM
-from tests import Tests
 
+from tests import Tests
 
 # ===== SCREEN POSITION ==================================================================================================== #
 

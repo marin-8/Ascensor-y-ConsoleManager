@@ -29,6 +29,16 @@ font = pygame.font.SysFont("Consolas", 24)
 
 # ===== LOOP ==================================================================================================== #
 
+fb = []
+eb = []
+for f in range(GB.NUM_FLOORS()):
+    fb.append(False)
+    eb.append(False)
+fb[GB.NUM_FLOORS()-9] = True
+eb[GB.NUM_FLOORS()-2] = True
+fb[GB.NUM_FLOORS()-5] = True
+eb[GB.NUM_FLOORS()-5] = True
+
 RUNNING = True
 while RUNNING:
 
@@ -47,7 +57,7 @@ while RUNNING:
                 t.start()
 
     #Tests.tests(pygame, SCREEN, DT)
-    Floors.Draw(pygame, SCREEN)
+    Floors.Draw(pygame, SCREEN, fb, eb)
 
     pygame.display.update()
 

@@ -10,7 +10,7 @@ class GB:
     __SCREEN_WIDTH = GetSystemMetrics(0)
     __SCREEN_HEIGHT = GetSystemMetrics(1)
 
-    __WINDOW_WIDTH = 200
+    __WINDOW_WIDTH = 180
     __WINDOW_HEIGHT = __SCREEN_HEIGHT - 40
 
     __FPS_BAR_HEIGHT = 37

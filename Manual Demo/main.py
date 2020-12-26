@@ -9,6 +9,7 @@ from globalStuff import GB
 from consoleManager import CM
 
 from tests import Tests
+from floors import Floors
 
 # ===== SCREEN POSITION ==================================================================================================== #
 
@@ -22,7 +23,6 @@ os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (screen_position_x, screen_positi
 pygame.init()
 
 SCREEN = pygame.display.set_mode((GB.WINDOW_WIDTH(), GB.WINDOW_HEIGHT()), pygame.NOFRAME)
-pygame.display.set_caption("Ascensor - Manual Demo")
 
 clock = pygame.time.Clock()
 font = pygame.font.SysFont("Consolas", 24)
@@ -46,7 +46,8 @@ while RUNNING:
                 t = threading.Thread(target=CM.testThread)
                 t.start()
 
-    Tests.tests(pygame, SCREEN, DT)
+    #Tests.tests(pygame, SCREEN, DT)
+    Floors.Draw(pygame, SCREEN)
 
     pygame.display.update()
 

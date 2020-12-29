@@ -25,7 +25,7 @@ class Floors:
             pygame.draw.rect(SCREEN, (0,0,0), (x, y, t, h))
 
             font = pygame.font.SysFont("Consolas", 32)
-            text = font.render(str(GB.NUM_FLOORS()-f), True, (0,0,0))
+            text = font.render(str(GB.NUM_FLOORS()-f-1), True, (0,0,0))
             text_rect = text.get_rect(center=(x+w/2, y+h/2+2))
             SCREEN.blit(text, text_rect)
 

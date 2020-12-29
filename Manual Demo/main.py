@@ -36,14 +36,13 @@ if __name__ == "__main__":
 
     system('cls')
 
+# ===== NUMBER OF FLOORS INPUT ==================================================================================================== #
+
+    threading.Thread(target=GB.SET_NUM_FLOORS, daemon=True).start()
+
 # ===== ELEVATOR INIT ==================================================================================================== #
 
     elevator = Elevator_BackEnd(GB.NUM_FLOORS())
-
-    elevator.add_target(7, Elevator_BackEnd.FLOOR)
-    elevator.add_target(5, Elevator_BackEnd.FLOOR)
-    elevator.add_target(5, Elevator_BackEnd.ELEVATOR)
-    elevator.add_target(1, Elevator_BackEnd.ELEVATOR)
 
 # ===== LOOP ==================================================================================================== #
 
@@ -53,17 +52,23 @@ if __name__ == "__main__":
 
         SCREEN.fill((192, 192, 192))
         pygame.draw.rect(SCREEN, (64, 64, 64), (0, 0, GB.WINDOW_WIDTH(), GB.FPS_BAR_HEIGHT()))
-        SCREEN.blit(font.render("FPS: " + str(int(clock.get_fps())), True, (192, 192, 192)), (8, 8))
+        SCREEN.blit(font.render("Speed: " + str(int(clock.get_fps())), True, (192, 192, 192)), (8, 8))
 
         DT = clock.tick(CM.playbackSpeed)
 
-        for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
-                    CM.running = False
+        pygame.event.get()
+
+        #for event in pygame.event.get():
+        #    if event.type == pygame.KEYDOWN:
+        #        if event.key == pygame.K_ESCAPE:
+        #            CM.running = False
 
         if CM.play:
             elevator.next_step()
+
+        if CM.addTarget[0]:
+            CM.addTarget[0] = False
+            elevator.add_target(CM.addTarget[1], CM.addTarget[2])
 
         #Tests.tests(pygame, SCREEN, DT)
         Elevator.Draw(pygame, SCREEN, elevator.cur_floor, elevator.doorsOpen)

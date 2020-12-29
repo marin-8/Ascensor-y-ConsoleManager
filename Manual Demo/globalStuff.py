@@ -15,7 +15,14 @@ class GB:
 
     __FPS_BAR_HEIGHT = 37
 
-    __NUM_FLOORS = 9
+    __NUM_FLOORS = -1
+
+    # ================================================== #
+
+    @staticmethod
+    def SET_NUM_FLOORS():
+        print(" [MESSAGE] > " + "Input the number of floors for the elevator:")
+        GB.__NUM_FLOORS = int(input("    [USER] > "))
 
     # ================================================== #
 

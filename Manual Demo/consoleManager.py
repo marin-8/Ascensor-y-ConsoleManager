@@ -9,7 +9,7 @@ class CM:
 
     __commands = ("play", "pause",
                   "setplaybackspeed",
-                  "nextstep", "nexttarget",
+                  #"nextstep", #"nexttarget",
                   "addtarget",
                   "clear", "exit")
 
@@ -22,6 +22,7 @@ class CM:
     play = False
     playbackSpeed = 2
     running = True
+    addTarget = [False, -1, False]
 
     @staticmethod
     def consoleManager():
@@ -37,9 +38,17 @@ class CM:
                     CM.play = False
                 elif command[0] == "setPlaybackSpeed".lower():
                     CM.playbackSpeed = int(command[1])
+                elif command[0] == "addTarget".lower():
+                    CM.addTarget[1] = int(command[1])
+                    if command[2] == "elevator":
+                        CM.addTarget[2] = True
+                    else:
+                        CM.addTarget[2] = False
+                    CM.addTarget[0] = True
                 elif command[0] == "clear":
                     system('cls')
                 elif command[0] == "exit":
+                    print(CM.__MESSAGE + "Exiting... Bye!")
                     CM.running = False
 
 # ===== ========== ==================================================================================================== #

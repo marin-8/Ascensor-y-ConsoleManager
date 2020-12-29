@@ -9,8 +9,9 @@ from globalStuff import GB
 from consoleManager import CM
 
 from tests import Tests
+from elevator import Elevator
 from floors import Floors
-from Ascensor.BackEnd.Elevator_BackEnd import Elevator
+from Ascensor.BackEnd.elevator_BackEnd import Elevator_BackEnd
 
 # ===== SCREEN POSITION ==================================================================================================== #
 
@@ -30,7 +31,11 @@ font = pygame.font.SysFont("Consolas", 24)
 
 # ===== ELEVATOR INIT ==================================================================================================== #
 
-elevator = Elevator(GB.NUM_FLOORS())
+elevator = Elevator_BackEnd(GB.NUM_FLOORS())
+
+elevator.add_target(7)
+elevator.add_target(5)
+elevator.add_target(1)
 
 # ===== LOOP ==================================================================================================== #
 
@@ -50,7 +55,10 @@ while RUNNING:
             if event.key == pygame.K_0:
                 threading.Thread(target=CM.testThread).start()
 
+    elevator.next_instruction()
+
     #Tests.tests(pygame, SCREEN, DT)
+    Elevator.Draw(pygame, SCREEN, elevator.cur_floor, elevator.doorsOpen)
     Floors.Draw(pygame, SCREEN, elevator.floor_buttons, elevator.elevator_buttons)
 
     pygame.display.update()

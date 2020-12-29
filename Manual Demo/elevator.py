@@ -3,7 +3,7 @@
 
 from globalStuff import GB
 
-# ===== FLOORS ==================================================================================================== #
+# ===== ELEVATOR ==================================================================================================== #
 
 class Elevator:
 
@@ -13,11 +13,11 @@ class Elevator:
     def Draw(pygame, SCREEN, floor, doorsOpen):
 
         x = 20+20+20
-        y = GB.FPS_BAR_HEIGHT()+20+(floor-1)*(Elevator.__elevator_height+20)
+        y = GB.FPS_BAR_HEIGHT()+20+(GB.NUM_FLOORS()-floor)*(Elevator.__elevator_height+20)
         w = 50
         h = Elevator.__elevator_height
 
-        pygame.draw.rect(SCREEN, (0,128,255), (x, y, w, h))
-        pygame.draw.rect(SCREEN, (0,128,255), (x+w, y, w, h))
+        pygame.draw.rect(SCREEN, (0,128,255), (x, y, w-25*int(doorsOpen), h))
+        pygame.draw.rect(SCREEN, (0,128,255), (x+w+25*int(doorsOpen), y, w-25*int(doorsOpen), h))
 
 # ===== ========== ==================================================================================================== #

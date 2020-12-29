@@ -1,5 +1,5 @@
 
-class Elevator:
+class Elevator_BackEnd:
 
     def __init__(self, floors):
         #self.__cur_instruction = "IDLE"
@@ -49,3 +49,11 @@ class Elevator:
     @property
     def elevator_buttons(self):
         return self.__elevator_buttons
+
+    @property
+    def cur_floor(self):
+        return self.__cur_floor
+
+    @property
+    def doorsOpen(self):
+        return self.__doorsOpen

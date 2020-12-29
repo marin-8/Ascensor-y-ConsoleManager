@@ -7,16 +7,15 @@ from globalStuff import GB
 
 class Floors:
 
-    __floor_height = (GB.WINDOW_HEIGHT()-GB.FPS_BAR_HEIGHT()-(GB.NUM_FLOORS()+1)*20) // GB.NUM_FLOORS()
-
     @staticmethod
     def Draw(pygame, SCREEN, floorButtons, elevatorButtons):
+        floor_height = (GB.WINDOW_HEIGHT() - GB.FPS_BAR_HEIGHT() - (GB.NUM_FLOORS() + 1) * 20) // GB.NUM_FLOORS()
         for f in range(GB.NUM_FLOORS()):
 
             x = 20+20+20
-            y = GB.FPS_BAR_HEIGHT()+20+f*(Floors.__floor_height+20)
+            y = GB.FPS_BAR_HEIGHT()+20+f*(floor_height+20)
             w = 100
-            h = Floors.__floor_height
+            h = floor_height
             t = 4
 
             pygame.draw.rect(SCREEN, (0,0,0), (x, y, w, t))

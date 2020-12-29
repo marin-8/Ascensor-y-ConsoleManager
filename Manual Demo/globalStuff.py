@@ -21,8 +21,10 @@ class GB:
 
     @staticmethod
     def SET_NUM_FLOORS():
-        print(" [MESSAGE] > " + "Input the number of floors for the elevator:")
-        GB.__NUM_FLOORS = int(input("    [USER] > "))
+        GB.__NUM_FLOORS = int(input(
+            "    [USER] > " +
+            "Input the number of floors for the elevator: "
+        ))
 
     # ================================================== #
 

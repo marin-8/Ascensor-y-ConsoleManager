@@ -33,11 +33,16 @@ font = pygame.font.SysFont("Consolas", 24)
 
 elevator = Elevator_BackEnd(GB.NUM_FLOORS())
 
-elevator.add_target(7)
-elevator.add_target(5)
-elevator.add_target(1)
+elevator.add_target(7, Elevator_BackEnd.FLOOR)
+elevator.add_target(5, Elevator_BackEnd.FLOOR)
+elevator.add_target(5, Elevator_BackEnd.ELEVATOR)
+elevator.add_target(1, Elevator_BackEnd.ELEVATOR)
+
+waitFlag = False
 
 # ===== LOOP ==================================================================================================== #
+
+threading.Thread(target=CM.consoleManager).start()
 
 RUNNING = True
 while RUNNING:
@@ -46,16 +51,17 @@ while RUNNING:
     pygame.draw.rect(SCREEN, (64, 64, 64), (0, 0, GB.WINDOW_WIDTH(), GB.FPS_BAR_HEIGHT()))
     SCREEN.blit(font.render("FPS: " + str(int(clock.get_fps())), True, (192, 192, 192)), (8, 8))
 
-    DT = clock.tick(1)
+    DT = clock.tick(2)
 
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 RUNNING = False
-            if event.key == pygame.K_0:
-                threading.Thread(target=CM.testThread).start()
 
-    elevator.next_instruction()
+    if not waitFlag:
+        waitFlag = True
+    else:
+        elevator.next_step()
 
     #Tests.tests(pygame, SCREEN, DT)
     Elevator.Draw(pygame, SCREEN, elevator.cur_floor, elevator.doorsOpen)

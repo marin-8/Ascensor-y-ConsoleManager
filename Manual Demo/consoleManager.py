@@ -4,7 +4,8 @@
 class CM:
 
     @staticmethod
-    def testThread():
-        print(input("Escribe algo: "))
+    def consoleManager():
+        while True:
+            print(input("Escribe algo: "))
 
 # ===== ========== ==================================================================================================== #

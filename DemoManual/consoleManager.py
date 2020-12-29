@@ -47,6 +47,7 @@ class CM:
                     CM.addTarget[0] = True
                 elif command[0] == "clear":
                     system('cls')
+                    print()
                 elif command[0] == "exit":
                     print(CM.__MESSAGE + "Exiting... Bye!")
                     CM.running = False

@@ -35,6 +35,7 @@ if __name__ == "__main__":
     font = pygame.font.SysFont("Consolas", 24)
 
     system('cls')
+    print()
 
 # ===== NUMBER OF FLOORS INPUT ==================================================================================================== #
 

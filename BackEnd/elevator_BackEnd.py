@@ -20,7 +20,7 @@ class Elevator_BackEnd:
             self.__elevator_buttons.append(False)
 
     def add_target(self, target, source):
-        if len(self.__targets) < 2 or not self.__targets[-1] == target:
+        if len(self.__targets) == 0 or not self.__targets[-1] == target:
             self.__targets.append(target)
         if source == Elevator_BackEnd.FLOOR:
             self.__floor_buttons[self.__floors-target-1] = True

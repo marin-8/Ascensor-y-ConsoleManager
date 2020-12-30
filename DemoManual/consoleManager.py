@@ -32,12 +32,20 @@ class CM:
             if command[0] not in CM.__commands:
                 print(CM.__ALERT + "The command entered does not exist. Try again.")
             else:
+
+
                 if command[0] == "play":
                     CM.play = True
+
+
                 elif command[0] == "pause":
                     CM.play = False
+
+
                 elif command[0] == "setPlaybackSpeed".lower():
                     CM.playbackSpeed = int(command[1])
+
+
                 elif command[0] == "addTarget".lower():
                     CM.addTarget[1] = int(command[1])
                     if command[2] == "elevator":
@@ -45,11 +53,16 @@ class CM:
                     else:
                         CM.addTarget[2] = False
                     CM.addTarget[0] = True
+
+
                 elif command[0] == "clear":
                     system('cls')
                     print()
+
+
                 elif command[0] == "exit":
                     print(CM.__MESSAGE + "Exiting... Bye!")
                     CM.running = False
+
 
 # ===== ========== ==================================================================================================== #

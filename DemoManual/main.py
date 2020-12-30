@@ -12,7 +12,7 @@ from consoleManager import CM
 from tests import Tests
 from elevator import Elevator
 from floors import Floors
-from Ascensor.BackEnd.elevator_BackEnd import Elevator_BackEnd
+from BackEnd.elevator_BackEnd import Elevator_BackEnd
 
 # ===== MAIN ==================================================================================================== #
 

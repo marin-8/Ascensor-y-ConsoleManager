@@ -1,6 +1,7 @@
 
 # ===== IMPORTS ==================================================================================================== #
 
+from os import system
 from win32api import GetSystemMetrics
 
 # ===== GLOBAL STUFF ==================================================================================================== #
@@ -21,10 +22,16 @@ class GB:
 
     @staticmethod
     def SET_NUM_FLOORS():
-        GB.__NUM_FLOORS = int(input(
-            "    [USER] > " +
-            "Input the number of floors for the elevator: "
-        ))
+        while True:
+            try:
+                GB.__NUM_FLOORS = int(input(
+                    "    [USER] > " +
+                    "Input the number of floors for the elevator: "
+                ))
+                break
+            except ValueError:
+                system('cls')
+                print("\n" + "   [ERROR] > " + "You must enter an integer greater than 1.")
 
     # ================================================== #
 

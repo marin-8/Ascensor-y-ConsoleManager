@@ -2,6 +2,7 @@
 # ===== IMPORTS ==================================================================================================== #
 
 from os import system
+from globalStuff import GB
 
 # ===== CONSOLE MANAGER ==================================================================================================== #
 
@@ -44,9 +45,13 @@ class CM:
 
                 elif command[0] == "setSpeed".lower():
                     try:
-                        CM.playbackSpeed = int(command[1])
-                    except:
+                        inputSpeed = int(command[1])
+                        assert(0 < inputSpeed <= 60)
+                        CM.playbackSpeed = inputSpeed
+                    except (ValueError, IndexError):
                         print(CM.__ERROR + 'Incorrect syntax. Try the "help" command for the correct syntax.')
+                    except AssertionError:
+                        print(CM.__ERROR + "You must enter an integer between 1 and 60 (included).")
 
 
                 elif command[0] == "getSpeed".lower():
@@ -61,10 +66,13 @@ class CM:
                         elif command[2] == "elevator":
                             CM.addTarget[2] = True
                         else:
-                            raise Exception
+                            raise SyntaxError
+                        assert(0 <= CM.addTarget[1] <= GB.NUM_FLOORS())
                         CM.addTarget[0] = True
-                    except:
+                    except (ValueError, IndexError, SyntaxError):
                         print(CM.__ERROR + 'Incorrect syntax. Try the "help" command for the correct syntax.')
+                    except AssertionError:
+                        print(CM.__ERROR + "For the <floor> you must enter an integer between 0 and " + str(GB.NUM_FLOORS()-1) + " (included).")
 
 
                 elif command[0] == "help":

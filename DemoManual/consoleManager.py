@@ -13,6 +13,7 @@ class CM:
     playbackSpeed = 2
     running = True
     addTarget = [False, -1, False]
+    echo = True
 
     __USER = "    [USER] > "
     __ALERT = "   [ALERT] > "
@@ -22,15 +23,21 @@ class CM:
 
     def __play(self, args):
         CM.play = True
+        if CM.echo:
+            print(CM.__INFO + "Resumed the simulation.")
 
     def __pause(self, args):
         CM.play = False
+        if CM.echo:
+            print(CM.__INFO + "Paused the simulation.")
 
     def __setspeed(self, args):
         try:
             inputSpeed = int(args[0])
             assert (0 < inputSpeed <= 60)
             CM.playbackSpeed = inputSpeed
+            if CM.echo:
+                print(CM.__INFO + "Modified the speed of the simulation to " + str(CM.playbackSpeed) + ".")
         except (ValueError, IndexError):
             print(CM.__ERROR + 'Incorrect syntax. Try the "help" command for the correct syntax.')
         except AssertionError:
@@ -50,18 +57,37 @@ class CM:
                 raise SyntaxError
             assert (0 <= CM.addTarget[1] <= GB.NUM_FLOORS())
             CM.addTarget[0] = True
+            if CM.echo:
+                if CM.addTarget[2]: # elevator
+                    print(CM.__INFO + "Pushed the button for the " + str(CM.addTarget[1]) + "th floor from inside the elevator.")
+                else: # floor
+                    print(CM.__INFO + "Called the elevator from the " + str(CM.addTarget[1]) + "th floor.")
         except (ValueError, IndexError, SyntaxError):
             print(CM.__ERROR + 'Incorrect syntax. Try the "help" command for the correct syntax.')
         except AssertionError:
             print(CM.__ERROR + "For the <floor> you must enter an integer between 0 and " + str(
                 GB.NUM_FLOORS() - 1) + " (included).")
 
+    def __echo(self, args):
+        try:
+            if args[0] == "true" or args[0] == "on" or args[0] == "t":
+                CM.echo = True
+                if CM.echo:
+                    print(CM.__INFO + 'Activated the "echo" mode.')
+            elif args[0] == "false" or args[0] == "off" or args[0] == "f":
+                CM.echo = False
+            else:
+                print(CM.__ERROR + 'Incorrect syntax. Try the "help" command for the correct syntax.')
+        except:
+            print(CM.__ERROR + 'Incorrect syntax. Try the "help" command for the correct syntax.')
+
     def __clear(self, args):
         system('cls')
         print()
 
     def __exit(self, args):
-        print(CM.__MESSAGE + "Exiting... Bye!")
+        if CM.echo:
+            print(CM.__MESSAGE + "Exiting... Bye!")
         CM.running = False
 
     __commands =\
@@ -71,10 +97,13 @@ class CM:
         Command("pause", "ps", __pause, "pause|ps", "Stops the simulation of the elevator."),
         Command("getSpeed", "gs", __getspeed, "getSpeed|gs", "Shows you the current speed of the simulation."),
         Command("setSpeed", "ss", __setspeed, "setSpeed|ss <stepsPerSecond>", "Modifies the speed of the simulation."),
-        Command("pushButton", "pb", __pushbutton, "pushButton|ps <floorNumber> <floor|elevator>", "Ads a new destination for the elevator."),
+        Command("pushButton", "pb", __pushbutton, "pushButton|pb <floorNumber> <{floor|f}|{elevator|e}>", "Ads a new destination for the elevator."),
+        Command("echo", "ec", __echo, "echo|ec <{true|t|on}|{false|f|off}>", "Enables or disables an info message about every command you execute successfully."),
         Command("clear", "cl", __clear, "clear|cl", "Clears the screen from all previous commands."),
         Command("exit", "ex", __exit, "exit|ex", "Terminates the program.")
     ]
+
+    # __commands.sort(key=lambda c: c.name)
 
     @staticmethod
     def consoleManager():
@@ -89,6 +118,12 @@ class CM:
                     break
 
             if not commandExists:
-                print(CM.__ALERT + 'The command entered does not exist. Try the "help" command for a list with all the commands and their syntax.')
+                if command[0] == "help":
+                    print(CM.__INFO + "List of all the commands and their syntax:" + "\n")
+                    for c in CM.__commands:
+                        print(" -- " + c.syntax)
+                        print("    " + "    " + c.description + "\n")
+                else:
+                    print(CM.__ALERT + 'The command entered does not exist. Try the "help" command for a list with all the commands and their syntax.')
 
 # ===== ========== ==================================================================================================== #

@@ -27,7 +27,7 @@ class GB:
             try:
                 inputFloors = int(input(
                     "    [USER] > " +
-                    "Input the number of floors for the elevator (between 2 and " + str(GB.__MAX_FLOORS) + " for your vertical resolution): "
+                    "Input the number of floors for the elevator (between 2 and " + str(GB.__MAX_FLOORS) + " (included) for your vertical resolution): "
                 ))
                 assert(2 <= inputFloors <= GB.__MAX_FLOORS)
                 GB.__NUM_FLOORS = inputFloors

@@ -14,8 +14,9 @@ class GB:
     __WINDOW_WIDTH = 180
     __WINDOW_HEIGHT = __SCREEN_HEIGHT - 40
 
-    __FPS_BAR_HEIGHT = 37
+    __FPS_BAR_HEIGHT = 30
 
+    __MAX_FLOORS = int(-__FPS_BAR_HEIGHT/65+__SCREEN_HEIGHT/65-4/13)
     __NUM_FLOORS = -1
 
     # ================================================== #
@@ -24,14 +25,16 @@ class GB:
     def SET_NUM_FLOORS():
         while True:
             try:
-                GB.__NUM_FLOORS = int(input(
+                inputFloors = int(input(
                     "    [USER] > " +
-                    "Input the number of floors for the elevator: "
+                    "Input the number of floors for the elevator (between 2 and " + str(GB.__MAX_FLOORS) + " for your vertical resolution): "
                 ))
+                assert(2 <= inputFloors <= GB.__MAX_FLOORS)
+                GB.__NUM_FLOORS = inputFloors
                 break
-            except ValueError:
+            except:
                 system('cls')
-                print("\n" + "   [ERROR] > " + "You must enter an integer greater than 1.")
+                print("\n" + "   [ERROR] > " + "You must enter an integer between 2 and " + str(GB.__MAX_FLOORS) + " (included).")
 
     # ================================================== #
 

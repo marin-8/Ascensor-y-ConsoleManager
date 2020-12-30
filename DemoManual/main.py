@@ -32,7 +32,7 @@ if __name__ == "__main__":
     SCREEN = pygame.display.set_mode((GB.WINDOW_WIDTH(), GB.WINDOW_HEIGHT()), pygame.NOFRAME)
 
     clock = pygame.time.Clock()
-    font = pygame.font.SysFont("Consolas", 24)
+    font = pygame.font.SysFont("Consolas", 16)
 
     system('cls')
     print()

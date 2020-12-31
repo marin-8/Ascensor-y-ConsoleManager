@@ -25,12 +25,12 @@ class Control:
             assert (0 < inputSpeed <= 60)
             Control.playbackSpeed = inputSpeed
         except (ValueError, IndexError):
-            print(ConsoleManager.ERROR() + 'Incorrect syntax. Try the "help" command for the correct syntax.')
+            print(ConsoleManager.LOG_ERROR() + 'Incorrect syntax. Try the "help" command for the correct syntax.')
         except AssertionError:
-            print(ConsoleManager.ERROR() + "You must enter an integer between 1 and 60 (included).")
+            print(ConsoleManager.LOG_ERROR() + "You must enter an integer between 1 and 60 (included).")
 
     def __getspeed(args):
-        print(ConsoleManager.INFO() + "speed = " + str(Control.playbackSpeed))
+        print(ConsoleManager.LOG_INFO() + "speed = " + str(Control.playbackSpeed))
 
     def __pushbutton(args):
         try:
@@ -44,13 +44,13 @@ class Control:
             assert (0 <= Control.addTarget[1] <= GB.NUM_FLOORS())
             Control.addTarget[0] = True
         except (ValueError, IndexError, SyntaxError):
-            print(ConsoleManager.ERROR() + 'Incorrect syntax. Try the "help" command for the correct syntax.')
+            print(ConsoleManager.LOG_ERROR() + 'Incorrect syntax. Try the "help" command for the correct syntax.')
         except AssertionError:
-            print(ConsoleManager.ERROR() + "For the <floor> you must enter an integer between 0 and " + str(
+            print(ConsoleManager.LOG_ERROR() + "For the <floor> you must enter an integer between 0 and " + str(
                 GB.NUM_FLOORS() - 1) + " (included).")
 
     def __exit(args):
-        print(ConsoleManager.MESSAGE() + "Exiting... Bye!")
+        print(ConsoleManager.LOG_MESSAGE() + "Exiting... Bye!")
         Control.running = False
 
     ConsoleManager.addCommand(Command("PLAY", "PL", __play, "PLAY|PL", "Starts the simulation of the elevator."))

@@ -86,23 +86,23 @@ class ConsoleManager:
                 print(ConsoleManager.__ALERT + 'The command entered does not exist. Try the "help" command for a list with all the commands and their syntax.')
 
     @staticmethod
-    def USER():
+    def LOG_USER():
         return ConsoleManager.__USER
 
     @staticmethod
-    def ALERT():
+    def LOG_ALERT():
         return ConsoleManager.__ALERT
 
     @staticmethod
-    def ERROR():
+    def LOG_ERROR():
         return ConsoleManager.__ERROR
 
     @staticmethod
-    def MESSAGE():
+    def LOG_MESSAGE():
         return ConsoleManager.__MESSAGE
 
     @staticmethod
-    def INFO():
+    def LOG_INFO():
         return ConsoleManager.__INFO
 
 # ===== ========== ==================================================================================================== #

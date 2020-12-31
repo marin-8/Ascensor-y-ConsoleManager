@@ -46,11 +46,10 @@ class Control:
         except (ValueError, IndexError, SyntaxError):
             print(ConsoleManager.LOG_ERROR() + 'Incorrect syntax. Try the "help" command for the correct syntax.')
         except AssertionError:
-            print(ConsoleManager.LOG_ERROR() + "For the <floor> you must enter an integer between 0 and " + str(
+            print(ConsoleManager.LOG_ERROR() + "For the <floorNumber> you must enter an integer between 0 and " + str(
                 GB.NUM_FLOORS() - 1) + " (included).")
 
     def __exit(args):
-        print(ConsoleManager.LOG_MESSAGE() + "Exiting... Bye!")
         Control.running = False
 
     ConsoleManager.addCommand(Command("PLAY", "PL", __play, "PLAY|PL", "Starts the simulation of the elevator."))

@@ -12,12 +12,12 @@ class Command:
     def __init__(self, name, short, action, syntax, description):
         self.__name = name
         self.__short = short
-        self.action = action
+        self.__action = action
         self.__syntax = syntax
         self.__description = description
 
     def execute(self, arguments):
-        self.action(arguments)
+        self.__action(arguments)
 
     @property
     def name(self):
@@ -62,8 +62,8 @@ class ConsoleManager:
         system('cls')
         print()
 
-    __commands.append(Command("CLEAR", "CL", __clear, "CLEAR|CL", "Clears the screen from all previous commands."))
-    __commands.append(Command("HELP", "HL", __help, "HELP|HL", "You already know what this command does (meta)."))
+    __commands.append(Command("CLEAR", "CL", __clear, "CLEAR|CL", "Clears the screen from all previous commands"))
+    __commands.append(Command("HELP", "HL", __help, "HELP|HL", "You already know what this command does (meta)"))
 
     @staticmethod
     def addCommand(command):
@@ -71,15 +71,15 @@ class ConsoleManager:
         ConsoleManager.__commands.sort(key=lambda c: c.name)
 
     @staticmethod
-    def consoleManager(running):
-        while running:
+    def consoleManager():
+        while True:
             command = input(ConsoleManager.__USER).lower().split()
 
             commandExists = False
             for c in ConsoleManager.__commands:
                 if command[0] == str(c.name).lower() or command[0] == str(c.short).lower():
                     commandExists = True
-                    c.action(command[1:])
+                    c.execute(command[1:])
                     break
 
             if not commandExists:

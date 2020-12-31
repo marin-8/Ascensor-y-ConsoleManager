@@ -35,6 +35,10 @@ if __name__ == "__main__":
     clock = pygame.time.Clock()
     font = pygame.font.SysFont("Consolas", 16)
 
+# ===== CONSOLE SETUP ==================================================================================================== #
+
+    system('mode con: cols=147 lines=49')
+
     system('cls')
     print()
 
@@ -48,7 +52,7 @@ if __name__ == "__main__":
 
 # ===== LOOP ==================================================================================================== #
 
-    threading.Thread(target=ConsoleManager.consoleManager, args=(Control.running,), daemon=True).start()
+    threading.Thread(target=ConsoleManager.consoleManager, daemon=True).start()
 
     while Control.running:
 

@@ -7,9 +7,10 @@ import threading
 from os import system
 
 from globalStuff import GB
-from consoleManager import CM
+from control import Control
+from consoleManager import ConsoleManager
 
-from tests import Tests
+#from tests import Tests
 from elevator import Elevator
 from floors import Floors
 from BackEnd.elevator_BackEnd import Elevator_BackEnd
@@ -47,15 +48,15 @@ if __name__ == "__main__":
 
 # ===== LOOP ==================================================================================================== #
 
-    threading.Thread(target=CM.consoleManager, daemon=True).start()
+    threading.Thread(target=ConsoleManager.consoleManager, args=(Control.running,), daemon=True).start()
 
-    while CM.running:
+    while Control.running:
 
         SCREEN.fill((192, 192, 192))
         pygame.draw.rect(SCREEN, (64, 64, 64), (0, 0, GB.WINDOW_WIDTH(), GB.FPS_BAR_HEIGHT()))
         SCREEN.blit(font.render("Speed: " + str(int(clock.get_fps())), True, (192, 192, 192)), (8, 8))
 
-        DT = clock.tick(CM.playbackSpeed)
+        DT = clock.tick(Control.playbackSpeed)
 
         pygame.event.get()
 
@@ -64,12 +65,12 @@ if __name__ == "__main__":
         #        if event.key == pygame.K_ESCAPE:
         #            CM.running = False
 
-        if CM.play:
+        if Control.play:
             elevator.next_step()
 
-        if CM.addTarget[0]:
-            CM.addTarget[0] = False
-            elevator.add_target(CM.addTarget[1], CM.addTarget[2])
+        if Control.addTarget[0]:
+            Control.addTarget[0] = False
+            elevator.add_target(Control.addTarget[1], Control.addTarget[2])
 
         #Tests.tests(pygame, SCREEN, DT)
         Elevator.Draw(pygame, SCREEN, elevator.cur_floor, elevator.doorsOpen)

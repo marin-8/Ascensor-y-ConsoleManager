@@ -75,15 +75,16 @@ class ConsoleManager:
         while True:
             command = input(ConsoleManager.__USER).lower().split()
 
-            commandExists = False
-            for c in ConsoleManager.__commands:
-                if command[0] == str(c.name).lower() or command[0] == str(c.short).lower():
-                    commandExists = True
-                    c.execute(command[1:])
-                    break
+            if not command == []:
+                commandExists = False
+                for c in ConsoleManager.__commands:
+                    if command[0] == str(c.name).lower() or command[0] == str(c.short).lower():
+                        commandExists = True
+                        c.execute(command[1:])
+                        break
 
-            if not commandExists:
-                print(ConsoleManager.__ALERT + 'The command entered does not exist. Try the "help" command for a list with all the commands and their syntax.')
+                if not commandExists:
+                    print(ConsoleManager.__ALERT + 'The command entered does not exist. Try the "help" command for a list with all the commands and their syntax.')
 
     @staticmethod
     def LOG_USER():

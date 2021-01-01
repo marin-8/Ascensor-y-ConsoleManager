@@ -20,16 +20,13 @@ class Elevator_BackEnd:
             self.__floor_buttons.append(False)
             self.__elevator_buttons.append(False)
 
-    def add_target_v1(self, target, source):
+    def add_target(self, target, source):
         if target not in self.__targets:
             self.__targets.append(target)
         if source == Elevator_BackEnd.FLOOR:
             self.__floor_buttons[self.__floors-target-1] = True
         elif source == Elevator_BackEnd.ELEVATOR:
             self.__elevator_buttons[self.__floors-target-1] = True
-
-    def add_target_v2(self, target, source):
-        pass
 
     def next_step(self):
         if self.__doorsOpen:

@@ -74,7 +74,7 @@ if __name__ == "__main__":
 
         if Control.addTarget[0]:
             Control.addTarget[0] = False
-            elevator.add_target_v1(Control.addTarget[1], Control.addTarget[2])
+            elevator.add_target(Control.addTarget[1], Control.addTarget[2])
 
         #Tests.tests(pygame, SCREEN, DT)
         Elevator.Draw(pygame, SCREEN, elevator.cur_floor, elevator.doorsOpen)

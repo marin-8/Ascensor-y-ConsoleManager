@@ -64,4 +64,3 @@ class Control:
     ConsoleManager.addCommand(Command("EXIT", "EX", __exit, "EXIT|EX", "Terminates the program."))
 
 # ===== ========== ==================================================================================================== #
-

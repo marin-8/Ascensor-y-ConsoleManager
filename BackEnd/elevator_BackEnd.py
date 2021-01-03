@@ -6,6 +6,8 @@ class Elevator_BackEnd:
     FLOOR = False
     ELEVATOR = True
 
+    # ================================================== #
+
     def __init__(self, floors):
         self.__cur_floor = 0  # Bajo
         self.__pre_floor = 0  # Bajo
@@ -19,6 +21,8 @@ class Elevator_BackEnd:
         for b in range(self.__floors):
             self.__floor_buttons.append(False)
             self.__elevator_buttons.append(False)
+
+    # ================================================== #
 
     def add_target(self, target, source):
         if target not in self.__targets:
@@ -47,6 +51,8 @@ class Elevator_BackEnd:
             else:
                 self.__pre_floor = self.__cur_floor
 
+    # ================================================== #
+
     @property
     def floor_buttons(self):
         return self.__floor_buttons
@@ -68,3 +74,4 @@ class Elevator_BackEnd:
         return self.__doorsOpen
 
 # ===== ========== ==================================================================================================== #
+

@@ -1,7 +1,7 @@
 
 # ===== IMPORTS ==================================================================================================== #
 
-from globalStuff import GB
+from globalStuff import GlobalStuff
 
 # ===== FLOORS ==================================================================================================== #
 
@@ -9,11 +9,11 @@ class Floors:
 
     @staticmethod
     def Draw(pygame, SCREEN, floorButtons, elevatorButtons):
-        floor_height = (GB.WINDOW_HEIGHT() - GB.FPS_BAR_HEIGHT() - (GB.NUM_FLOORS() + 1) * 20) // GB.NUM_FLOORS()
-        for f in range(GB.NUM_FLOORS()):
+        floor_height = (GlobalStuff.WINDOW_HEIGHT() - GlobalStuff.FPS_BAR_HEIGHT() - (GlobalStuff.NUM_FLOORS() + 1) * 20) // GlobalStuff.NUM_FLOORS()
+        for f in range(GlobalStuff.NUM_FLOORS()):
 
             x = 20+20+20
-            y = GB.FPS_BAR_HEIGHT()+20+f*(floor_height+20)
+            y = GlobalStuff.FPS_BAR_HEIGHT() + 20 + f * (floor_height + 20)
             w = 100
             h = floor_height
             t = 4
@@ -24,7 +24,7 @@ class Floors:
             pygame.draw.rect(SCREEN, (0,0,0), (x, y, t, h))
 
             font = pygame.font.SysFont("Consolas", 32)
-            text = font.render(str(GB.NUM_FLOORS()-f-1), True, (0,0,0))
+            text = font.render(str(GlobalStuff.NUM_FLOORS() - f - 1), True, (0, 0, 0))
             text_rect = text.get_rect(center=(x+w/2, y+h/2+2))
             SCREEN.blit(text, text_rect)
 
@@ -42,3 +42,4 @@ class Floors:
                 pygame.draw.rect(SCREEN, (0, 128, 255), (20, yb, 20, 20))
 
 # ===== ========== ==================================================================================================== #
+

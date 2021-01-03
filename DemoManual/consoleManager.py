@@ -16,8 +16,12 @@ class Command:
         self.__syntax = syntax
         self.__description = description
 
+    # ================================================== #
+
     def execute(self, arguments):
         self.__action(arguments)
+
+    # ================================================== #
 
     @property
     def name(self):
@@ -47,6 +51,8 @@ class ConsoleManager:
 
     __commands = []
 
+    # ================================================== #
+
     def __help(args):
         print(ConsoleManager.__INFO + "List of all the commands and their syntax:")
         tableData = [["Command", "Description", "Syntax"]]
@@ -62,8 +68,12 @@ class ConsoleManager:
         system('cls')
         print()
 
+    # ================================================== #
+
     __commands.append(Command("CLEAR", "CL", __clear, "CLEAR|CL", "Clears the screen from all previous commands"))
     __commands.append(Command("HELP", "HL", __help, "HELP|HL", "You already know what this command does (meta)"))
+
+    # ================================================== #
 
     @staticmethod
     def addCommand(command):
@@ -86,6 +96,8 @@ class ConsoleManager:
                 if not commandExists:
                     print(ConsoleManager.__ALERT + 'The command entered does not exist. Try the "help" command for a list with all the commands and their syntax.')
 
+    # ================================================== #
+
     @staticmethod
     def LOG_USER():
         return ConsoleManager.__USER
@@ -107,3 +119,4 @@ class ConsoleManager:
         return ConsoleManager.__INFO
 
 # ===== ========== ==================================================================================================== #
+

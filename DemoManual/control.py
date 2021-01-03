@@ -1,7 +1,7 @@
 
 # ===== IMPORTS ==================================================================================================== #
 
-from globalStuff import GB
+from globalStuff import GlobalStuff
 from consoleManager import *
 
 # ===== COMMAND CONTROL ==================================================================================================== #
@@ -12,6 +12,8 @@ class Control:
     playbackSpeed = 2
     running = True
     addTarget = [False, -1, False]
+
+    # ================================================== #
 
     def __play(args):
         Control.play = True
@@ -41,16 +43,18 @@ class Control:
                 Control.addTarget[2] = True
             else:
                 raise SyntaxError
-            assert (0 <= Control.addTarget[1] <= GB.NUM_FLOORS())
+            assert (0 <= Control.addTarget[1] <= GlobalStuff.NUM_FLOORS())
             Control.addTarget[0] = True
         except (ValueError, IndexError, SyntaxError):
             print(ConsoleManager.LOG_ERROR() + 'Incorrect syntax. Try the "help" command for the correct syntax.')
         except AssertionError:
             print(ConsoleManager.LOG_ERROR() + "For the <floorNumber> you must enter an integer between 0 and " + str(
-                GB.NUM_FLOORS() - 1) + " (included).")
+                GlobalStuff.NUM_FLOORS() - 1) + " (included).")
 
     def __exit(args):
         Control.running = False
+
+    # ================================================== #
 
     ConsoleManager.addCommand(Command("PLAY", "PL", __play, "PLAY|PL", "Starts the simulation of the elevator."))
     ConsoleManager.addCommand(Command("PAUSE", "PS", __pause, "PAUSE|PS", "Stops the simulation of the elevator."))
@@ -60,3 +64,4 @@ class Control:
     ConsoleManager.addCommand(Command("EXIT", "EX", __exit, "EXIT|EX", "Terminates the program."))
 
 # ===== ========== ==================================================================================================== #
+

@@ -6,7 +6,7 @@ from win32api import GetSystemMetrics
 
 # ===== GLOBAL STUFF ==================================================================================================== #
 
-class GB:
+class GlobalStuff:
 
     __SCREEN_WIDTH = GetSystemMetrics(0)
     __SCREEN_HEIGHT = GetSystemMetrics(1)
@@ -27,39 +27,40 @@ class GB:
             try:
                 inputFloors = int(input(
                     "    [USER] > " +
-                    "Input the number of floors for the elevator (between 2 and " + str(GB.__MAX_FLOORS) + " (included) for your vertical resolution): "
+                    "Input the number of floors for the elevator (between 2 and " + str(GlobalStuff.__MAX_FLOORS) + " (included) for your vertical resolution): "
                 ))
-                assert(2 <= inputFloors <= GB.__MAX_FLOORS)
-                GB.__NUM_FLOORS = inputFloors
+                assert(2 <= inputFloors <= GlobalStuff.__MAX_FLOORS)
+                GlobalStuff.__NUM_FLOORS = inputFloors
                 break
             except:
                 system('cls')
-                print("\n" + "   [ERROR] > " + "You must enter an integer between 2 and " + str(GB.__MAX_FLOORS) + " (included).")
+                print("\n" + "   [ERROR] > " + "You must enter an integer between 2 and " + str(GlobalStuff.__MAX_FLOORS) + " (included).")
 
     # ================================================== #
 
     @staticmethod
     def SCREEN_WIDTH():
-        return GB.__SCREEN_WIDTH
+        return GlobalStuff.__SCREEN_WIDTH
 
     @staticmethod
     def SCREEN_HEIGHT():
-        return GB.__SCREEN_HEIGHT
+        return GlobalStuff.__SCREEN_HEIGHT
 
     @staticmethod
     def WINDOW_WIDTH():
-        return GB.__WINDOW_WIDTH
+        return GlobalStuff.__WINDOW_WIDTH
 
     @staticmethod
     def WINDOW_HEIGHT():
-        return GB.__WINDOW_HEIGHT
+        return GlobalStuff.__WINDOW_HEIGHT
 
     @staticmethod
     def FPS_BAR_HEIGHT():
-        return GB.__FPS_BAR_HEIGHT
+        return GlobalStuff.__FPS_BAR_HEIGHT
 
     @staticmethod
     def NUM_FLOORS():
-        return GB.__NUM_FLOORS
+        return GlobalStuff.__NUM_FLOORS
 
 # ===== ========== ==================================================================================================== #
+

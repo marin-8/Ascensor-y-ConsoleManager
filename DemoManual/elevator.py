@@ -1,7 +1,7 @@
 
 # ===== IMPORTS ==================================================================================================== #
 
-from globalStuff import GB
+from globalStuff import GlobalStuff
 
 # ===== ELEVATOR ==================================================================================================== #
 
@@ -9,10 +9,10 @@ class Elevator:
 
     @staticmethod
     def Draw(pygame, SCREEN, floor, doorsOpen):
-        elevator_height = (GB.WINDOW_HEIGHT() - GB.FPS_BAR_HEIGHT() - (GB.NUM_FLOORS() + 1) * 20) // GB.NUM_FLOORS()
+        elevator_height = (GlobalStuff.WINDOW_HEIGHT() - GlobalStuff.FPS_BAR_HEIGHT() - (GlobalStuff.NUM_FLOORS() + 1) * 20) // GlobalStuff.NUM_FLOORS()
 
         x = 20+20+20
-        y = GB.FPS_BAR_HEIGHT()+20+(GB.NUM_FLOORS()-floor-1)*(elevator_height+20)
+        y = GlobalStuff.FPS_BAR_HEIGHT() + 20 + (GlobalStuff.NUM_FLOORS() - floor - 1) * (elevator_height + 20)
         w = 50
         h = elevator_height
 
@@ -20,3 +20,4 @@ class Elevator:
         pygame.draw.rect(SCREEN, (0,128,255), (x+w+25*int(doorsOpen), y, w-25*int(doorsOpen), h))
 
 # ===== ========== ==================================================================================================== #
+

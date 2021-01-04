@@ -1,11 +1,12 @@
 
 # ===== IMPORTS ==================================================================================================== #
 
-import os
-import threading
 from os import system
-
 from os import environ
+import threading
+
+import colorama
+
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 import pygame
 
@@ -26,7 +27,7 @@ if __name__ == "__main__":
     screen_position_x = GlobalStuff.SCREEN_WIDTH() - GlobalStuff.WINDOW_WIDTH()
     screen_position_y = 0
 
-    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (screen_position_x, screen_position_y)
+    environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (screen_position_x, screen_position_y)
 
 # ===== PYGAME INIT ==================================================================================================== #
 
@@ -40,6 +41,8 @@ if __name__ == "__main__":
 # ===== CONSOLE SETUP ==================================================================================================== #
 
     system('mode con: cols=147 lines=49')
+
+    colorama.init()
 
 # ===== NUMBER OF FLOORS INPUT ==================================================================================================== #
 

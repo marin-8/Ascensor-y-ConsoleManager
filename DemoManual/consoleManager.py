@@ -2,7 +2,7 @@
 # ===== IMPORTS ==================================================================================================== #
 
 from os import system
-#from textwrap import wrap
+from colorama import Fore, Style
 from terminaltables import SingleTable
 
 # ===== COMMAND ==================================================================================================== #
@@ -54,15 +54,14 @@ class ConsoleManager:
     # ================================================== #
 
     def __help(args):
-        print(ConsoleManager.__INFO + "List of all the commands and their syntax:")
+        ConsoleManager.LOG_INFO("List of all the commands and their syntax:")
         tableData = [["Command", "Description", "Syntax"]]
         for c in ConsoleManager.__commands:
-            # '\n'.join(wrap(c.description, 40))
             tableRow = [c.name, c.description, c.syntax]
             tableData.append(tableRow)
         table = SingleTable(tableData)
         table.inner_row_border = True
-        print(" " + str(table.table).replace("\n", "\n "))
+        print(Fore.CYAN + " " + str(table.table).replace("\n", "\n ") + Fore.RESET)
 
     def __clear(args):
         system('cls')
@@ -82,9 +81,9 @@ class ConsoleManager:
 
     @staticmethod
     def consoleManager():
-        print(ConsoleManager.__INFO + 'Try the "help" command for a list with all the commands and their syntax.')
+        ConsoleManager.LOG_INFO('Try the "help" command for a list with all the commands and their syntax.')
         while True:
-            command = input(ConsoleManager.__USER).lower().split()
+            command = ConsoleManager.INPUT_USER("").lower().split()
 
             if not command == []:
                 commandExists = False
@@ -95,28 +94,28 @@ class ConsoleManager:
                         break
 
                 if not commandExists:
-                    print(ConsoleManager.__ALERT + 'The command entered does not exist. Try the "help" command for a list with all the commands and their syntax.')
+                    ConsoleManager.LOG_ALERT('The command entered does not exist. Try the "help" command for a list with all the commands and their syntax.')
 
     # ================================================== #
 
     @staticmethod
-    def LOG_USER():
-        return ConsoleManager.__USER
+    def INPUT_USER(caption):
+        return input(ConsoleManager.__USER  + caption)
 
     @staticmethod
-    def LOG_ALERT():
-        return ConsoleManager.__ALERT
+    def LOG_ALERT(alert):
+        print(Fore.YELLOW + Style.BRIGHT + ConsoleManager.__ALERT + alert + Style.RESET_ALL)
 
     @staticmethod
-    def LOG_ERROR():
-        return ConsoleManager.__ERROR
+    def LOG_ERROR(error):
+        print(Fore.RED + Style.BRIGHT + ConsoleManager.__ERROR + error + Style.RESET_ALL)
 
     @staticmethod
-    def LOG_MESSAGE():
-        return ConsoleManager.__MESSAGE
+    def LOG_MESSAGE(message):
+        print(Fore.GREEN + Style.BRIGHT + ConsoleManager.__MESSAGE + message + Style.RESET_ALL)
 
     @staticmethod
-    def LOG_INFO():
-        return ConsoleManager.__INFO
+    def LOG_INFO(info):
+        print(Fore.BLUE + Style.BRIGHT + ConsoleManager.__INFO + info + Style.RESET_ALL)
 
 # ===== ========== ==================================================================================================== #

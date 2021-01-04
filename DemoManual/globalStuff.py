@@ -26,16 +26,19 @@ class GlobalStuff:
     def SET_NUM_FLOORS():
         while True:
             try:
-                inputFloors = int(input(
-                    ConsoleManager.LOG_USER() +
-                    "Input the number of floors for the elevator (between 2 and " + str(GlobalStuff.__MAX_FLOORS) + " (included) for your vertical resolution): "
-                ))
+                inputFloors = int(ConsoleManager.INPUT_USER
+                (
+                    "Input the number of floors for the elevator (between 2 and " +
+                    str(GlobalStuff.__MAX_FLOORS) +
+                    " (included) for your vertical resolution): ")
+                )
                 assert(2 <= inputFloors <= GlobalStuff.__MAX_FLOORS)
                 GlobalStuff.__NUM_FLOORS = inputFloors
                 break
             except:
                 system('cls')
-                print("\n" + ConsoleManager.LOG_ERROR() + "You must enter an integer between 2 and " + str(GlobalStuff.__MAX_FLOORS) + " (included).")
+                print()
+                ConsoleManager.LOG_ERROR("You must enter an integer between 2 and " + str(GlobalStuff.__MAX_FLOORS) + " (included).")
 
     # ================================================== #
 

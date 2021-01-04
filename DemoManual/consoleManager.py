@@ -55,13 +55,16 @@ class ConsoleManager:
 
     def __help(args):
         ConsoleManager.LOG_INFO("List of all the commands and their syntax:")
-        tableData = [[Fore.GREEN + "Command" + Fore.CYAN, Fore.GREEN + "Description" + Fore.CYAN, Fore.GREEN + "Syntax" + Fore.CYAN]]
+        lines_CS = Fore.BLUE + Style.NORMAL
+        header_CS = Fore.GREEN + Style.NORMAL
+        rows_CS = Fore.CYAN + Style.BRIGHT
+        tableData = [[header_CS + "Command" + lines_CS, header_CS + "Description" + lines_CS, header_CS + "Syntax" + lines_CS]]
         for c in ConsoleManager.__commands:
-            tableRow = [c.name, c.description, c.syntax]
+            tableRow = [rows_CS + c.name + lines_CS, rows_CS + c.description + lines_CS, rows_CS + c.syntax + lines_CS]
             tableData.append(tableRow)
         table = SingleTable(tableData)
         table.inner_row_border = True
-        print(Fore.CYAN + " " + str(table.table).replace("\n", "\n ") + Fore.RESET)
+        print(lines_CS + " " + str(table.table).replace("\n", "\n ") + Style.RESET_ALL)
 
     def __clear(args):
         system('cls')
@@ -100,15 +103,17 @@ class ConsoleManager:
 
     @staticmethod
     def INPUT_USER(caption):
-        return input(ConsoleManager.__USER  + caption)
+        userInput = input(Style.BRIGHT + ConsoleManager.__USER  + caption)
+        print(Style.RESET_ALL, end="")
+        return userInput
 
     @staticmethod
     def LOG_ALERT(alert):
-        print(Fore.YELLOW + Style.BRIGHT + ConsoleManager.__ALERT + alert + Style.RESET_ALL)
+        print(Fore.YELLOW + ConsoleManager.__ALERT + alert + Style.RESET_ALL)
 
     @staticmethod
     def LOG_ERROR(error):
-        print(Fore.RED + Style.BRIGHT + ConsoleManager.__ERROR + error + Style.RESET_ALL)
+        print(Fore.RED + ConsoleManager.__ERROR + error + Style.RESET_ALL)
 
     @staticmethod
     def LOG_MESSAGE(message):

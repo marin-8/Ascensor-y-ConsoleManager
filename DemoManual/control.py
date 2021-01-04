@@ -62,4 +62,11 @@ class Control:
     ConsoleManager.addCommand(Command("PUSHBUTTON", "PB", __pushbutton, "PUSHBUTTON|PB <floorNumber> <{FLOOR|F}|{ELEVATOR|E}>", "Ads a new destination for the elevator"))
     ConsoleManager.addCommand(Command("EXIT", "EX", __exit, "EXIT|EX", "Terminates the program"))
 
+    # ================================================== #
+
+    def __testmsg(args):
+        ConsoleManager.LOG_MESSAGE("This is just a test message because at the moment there aren't any messages in the program.")
+
+    ConsoleManager.addCommand(Command("TESTMSG", "TM", __testmsg, "TESTMSG|TM", "Displays a test message to show the color of the command"))
+
 # ===== ========== ==================================================================================================== #

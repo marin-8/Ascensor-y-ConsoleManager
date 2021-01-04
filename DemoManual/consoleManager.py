@@ -55,7 +55,7 @@ class ConsoleManager:
 
     def __help(args):
         ConsoleManager.LOG_INFO("List of all the commands and their syntax:")
-        tableData = [["Command", "Description", "Syntax"]]
+        tableData = [[Fore.GREEN + "Command" + Fore.CYAN, Fore.GREEN + "Description" + Fore.CYAN, Fore.GREEN + "Syntax" + Fore.CYAN]]
         for c in ConsoleManager.__commands:
             tableRow = [c.name, c.description, c.syntax]
             tableData.append(tableRow)

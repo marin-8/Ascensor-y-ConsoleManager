@@ -2,9 +2,12 @@
 # ===== IMPORTS ==================================================================================================== #
 
 import os
-import pygame
 import threading
 from os import system
+
+from os import environ
+environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
+import pygame
 
 from globalStuff import GlobalStuff
 from control import Control
@@ -38,12 +41,14 @@ if __name__ == "__main__":
 
     system('mode con: cols=147 lines=49')
 
-    system('cls')
-    print()
-
 # ===== NUMBER OF FLOORS INPUT ==================================================================================================== #
 
+    print()
+
     GlobalStuff.SET_NUM_FLOORS()
+
+    system('cls')
+    print()
 
 # ===== ELEVATOR INIT ==================================================================================================== #
 

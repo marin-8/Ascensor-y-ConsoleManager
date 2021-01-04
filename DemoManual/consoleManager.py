@@ -82,6 +82,7 @@ class ConsoleManager:
 
     @staticmethod
     def consoleManager():
+        print(ConsoleManager.__INFO + 'Try the "help" command for a list with all the commands and their syntax.')
         while True:
             command = input(ConsoleManager.__USER).lower().split()
 

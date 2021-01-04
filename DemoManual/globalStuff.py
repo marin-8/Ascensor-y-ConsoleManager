@@ -3,6 +3,7 @@
 
 from os import system
 from win32api import GetSystemMetrics
+from consoleManager import ConsoleManager
 
 # ===== GLOBAL STUFF ==================================================================================================== #
 
@@ -26,7 +27,7 @@ class GlobalStuff:
         while True:
             try:
                 inputFloors = int(input(
-                    "    [USER] > " +
+                    ConsoleManager.LOG_USER() +
                     "Input the number of floors for the elevator (between 2 and " + str(GlobalStuff.__MAX_FLOORS) + " (included) for your vertical resolution): "
                 ))
                 assert(2 <= inputFloors <= GlobalStuff.__MAX_FLOORS)
@@ -34,7 +35,7 @@ class GlobalStuff:
                 break
             except:
                 system('cls')
-                print("\n" + "   [ERROR] > " + "You must enter an integer between 2 and " + str(GlobalStuff.__MAX_FLOORS) + " (included).")
+                print("\n" + ConsoleManager.LOG_ERROR() + "You must enter an integer between 2 and " + str(GlobalStuff.__MAX_FLOORS) + " (included).")
 
     # ================================================== #
 

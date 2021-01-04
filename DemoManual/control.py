@@ -56,11 +56,11 @@ class Control:
 
     # ================================================== #
 
-    ConsoleManager.addCommand(Command("PLAY", "PL", __play, "PLAY|PL", "Starts the simulation of the elevator."))
-    ConsoleManager.addCommand(Command("PAUSE", "PS", __pause, "PAUSE|PS", "Stops the simulation of the elevator."))
-    ConsoleManager.addCommand(Command("GETSPEED", "GS", __getspeed, "GETSPEED|GS", "Shows you the current speed of the simulation."))
-    ConsoleManager.addCommand(Command("SETSPEED", "SS", __setspeed, "SETSPEED|SS <stepsPerSecond>", "Modifies the speed of the simulation."))
-    ConsoleManager.addCommand(Command("PUSHBUTTON", "PB", __pushbutton, "PUSHBUTTON|PB <floorNumber> <{FLOOR|F}|{ELEVATOR|E}>", "Ads a new destination for the elevator."))
-    ConsoleManager.addCommand(Command("EXIT", "EX", __exit, "EXIT|EX", "Terminates the program."))
+    ConsoleManager.addCommand(Command("PLAY", "PL", __play, "PLAY|PL", "Starts the simulation of the elevator"))
+    ConsoleManager.addCommand(Command("PAUSE", "PS", __pause, "PAUSE|PS", "Stops the simulation of the elevator"))
+    ConsoleManager.addCommand(Command("GETSPEED", "GS", __getspeed, "GETSPEED|GS", "Shows you the current speed of the simulation"))
+    ConsoleManager.addCommand(Command("SETSPEED", "SS", __setspeed, "SETSPEED|SS <stepsPerSecond>", "Modifies the speed of the simulation"))
+    ConsoleManager.addCommand(Command("PUSHBUTTON", "PB", __pushbutton, "PUSHBUTTON|PB <floorNumber> <{FLOOR|F}|{ELEVATOR|E}>", "Ads a new destination for the elevator"))
+    ConsoleManager.addCommand(Command("EXIT", "EX", __exit, "EXIT|EX", "Terminates the program"))
 
 # ===== ========== ==================================================================================================== #

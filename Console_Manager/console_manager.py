@@ -58,9 +58,9 @@ class ConsoleManager:
         lines_CS = Fore.BLUE + Style.NORMAL
         header_CS = Fore.GREEN + Style.NORMAL
         rows_CS = Fore.CYAN + Style.BRIGHT
-        tableData = [[header_CS + "Command" + lines_CS, header_CS + "Description" + lines_CS, header_CS + "Syntax" + lines_CS]]
+        tableData = [[header_CS + "Command" + lines_CS, header_CS + "Short" + lines_CS, header_CS + "Description" + lines_CS, header_CS + "Syntax" + lines_CS]]
         for c in ConsoleManager.__commands:
-            tableRow = [rows_CS + c.name + lines_CS, rows_CS + c.description + lines_CS, rows_CS + c.syntax + lines_CS]
+            tableRow = [rows_CS + c.name + lines_CS, rows_CS + c.short + lines_CS, rows_CS + c.description + lines_CS, rows_CS + c.syntax + lines_CS]
             tableData.append(tableRow)
         table = SingleTable(tableData)
         table.inner_row_border = True

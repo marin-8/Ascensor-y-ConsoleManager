@@ -15,8 +15,6 @@
 
 <!-- ===== DESCRIPCIÓN ================================================== -->
 
-<br>
-
 ## **Descripción** <a name="DESC"></a>
 
 _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principales:
@@ -29,13 +27,9 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
     - La demo `Manual` que representa un ascensor a tiempo real utilizando `Pygame` para la visualización y el módulo `console_manager` para el control desde una ventana de consola estándar.
 
-<br>
-
 ---
 
 <!-- ===== TABLA DE CONTENIDOS ================================================== -->
-
-<br>
 
 ## **Tabla de contenidos**
 
@@ -50,8 +44,6 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 - [**Funcionamiento**](#DESC)
 
 - [**Sobre mí**](#DESC)
-
-<br>
 
 ---
 

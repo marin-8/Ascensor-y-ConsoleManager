@@ -43,9 +43,21 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 - [**Características principales**](#CAPR)
 
+    - [Módulo `elevator_backend`](#CAPR_EB)
+    - [Módulo `console_manager`](#CAPR_CM)
+    - [Demo `Manual`](#CAPR_D_M)
+
 - [**Tecnologías usadas**](#TEUS)
 
+    - [Lenguaje](#TEUS_L)
+    - [Módulo `console_manager`](#TEUS_CM)
+    - [Demo `Manual`](#TEUS_D_M)
+
 - [**Funcionamiento**](#FUNC)
+
+    - [Módulo `elevator_backend`](#FUNC_EB)
+    - [Módulo `console_manager`](#FUNC_CM)
+    - [Demo `Manual`](#FUNC_D_M)
 
 <br>
 
@@ -57,7 +69,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 ## **Características principales** <a name="CAPR"></a>
 
-- Módulo `elevator_backend` :
+- Módulo `elevator_backend` : <a name="CAPR_EB"></a>
 
     - Representación lógica de un ascensor
     - Función `add_target(target, source)` para simular:
@@ -65,7 +77,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
         - la pulsación de un botón dentro del ascensor
     - Función `next_step()` que avanza un paso en la simulación del ascensor
 
-- Módulo `console_manager` :
+- Módulo `console_manager` : <a name="CAPR_CM"></a>
 
     - Clase `Command` que describe la estructura de un comando
     - Clase `ConsoleManager` que permite:
@@ -73,7 +85,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
         - Pedir al usuario la introducción de comandos y gestionarlos con la función `consoleManager()` hasta que la aplicación se cierre
         - Visualizar con el comando `help` todos los comandos, su descripción y su sintaxis en una tabla 
 
-- Demo `Manual` :
+- Demo `Manual` : <a name="CAPR_D_M"></a>
 
     - Cálculo del máximo número de pisos para el ascensor en base a la resolución vertical de la pantalla
     - Número de pisos introducido por el usuario
@@ -92,9 +104,9 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 ## **Tecnologías usadas** <a name="TEUS"></a>
 
-- Lenguaje: `Python`
+- Lenguaje: `Python` <a name="TEUS_L"></a>
 
-- Módulo `console_manager` :
+- Módulo `console_manager` : <a name="TEUS_CM"></a>
 
     - Módulos de terceros:
         - `colorama` para imprimir en la consola en color
@@ -102,7 +114,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 - Demo `Manual` :
 
-    - Módulos de Python:
+    - Módulos de Python: <a name="TEUS_D_M"></a>
 
         - `os.system` para:
             - modificar el tamaño inicial de la consola
@@ -126,7 +138,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 ## **Funcionamiento** <a name="FUNC"></a>
 
-- Módulo `elevator_backend` :
+- Módulo `elevator_backend` : <a name="FUNC_EB"></a>
 
     - Función `add_target(target, source)` para añadir un objetivo para el ascensor
         - Parámetro `target` : número del piso objetivo
@@ -135,7 +147,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
             - `elevator` : simulando la pulsación de uno de los botones dentro del ascensor
     - Función `next_step()` para avanzar un paso en la simulación del ascensor
 
-- Módulo `console_manager` :
+- Módulo `console_manager` : <a name="FUNC_CM"></a>
 
     - Clase `Command` que describe la estructura de un comando
         - Parámetros del constructor:
@@ -149,6 +161,10 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
     - Clase `ConsoleManager` para la gestión de los comandos que se le introduzcan
         - Función `addCommand(command)` que añade un comando de tipo `Command` al gestor
         - Función `consoleManager()` que está constantemente pidiendo al usuario la introducción comandos para ejecutar
+
+- Demo `Manual` : <a name="FUNC_D_M"></a>
+
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum, purus at rutrum dictum, velit lectus pulvinar leo, eu consequat lectus orci vel massa. Donec at lacus eu purus posuere bibendum. Maecenas facilisis mi justo, eu tempor dui semper sed. Donec imperdiet mattis lacus, vitae dapibus sem facilisis sit amet. Mauris convallis purus non justo iaculis molestie. Cras luctus odio malesuada hendrerit euismod.
 
 <br>
 

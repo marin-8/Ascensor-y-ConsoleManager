@@ -85,6 +85,7 @@ class ConsoleManager:
     @staticmethod
     def consoleManager():
         ConsoleManager.LOG_INFO('Try the "help" command for a list with all the commands and their syntax.')
+        ConsoleManager.LOG_INFO('The simulation is initialized paused. Try the "play" command to start it.')
         while True:
             command = ConsoleManager.INPUT_USER("").lower().split()
 

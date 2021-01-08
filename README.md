@@ -6,10 +6,8 @@
 <!-- ===== TITULO ================================================== -->
 
 ---
-# **Ascensor**
+# **Ascensor** y **Console Manager**
 ---
-
-<br>
 
 <!-- ===== IMAGEN CABECERA ================================================== -->
 
@@ -17,10 +15,11 @@
 
 <!-- ===== DESCRIPCIÓN ================================================== -->
 
+<br>
 
-## **Descripción**
+## **Descripción** <a name="DESC"></a>
 
-_Ascensor_ es un proyecto formado por 3 componentes principales:
+_Ascensor y Console Manager_ es un proyecto formado por 3 componentes principales:
 
 - El módulo `elevator_backend` que describe el funcionamiento de un ascensor.
 
@@ -29,6 +28,28 @@ _Ascensor_ es un proyecto formado por 3 componentes principales:
 - Las `Demos` que implementen cualquiera de los 2 componentes anteriores:
 
     - La demo `Manual` que representa un ascensor a tiempo real utilizando `Pygame` para la visualización y el módulo `console_manager` para el control desde una ventana de consola estándar.
+
+<br>
+
+---
+
+<!-- ===== TABLA DE CONTENIDOS ================================================== -->
+
+<br>
+
+## **Tabla de contenidos**
+
+- [**Descripción**](#DESC)
+
+- [**Características principales**](#DESC)
+
+- [**Tecnologías usadas**](#DESC)
+
+- [**Motivación**](#DESC)
+
+- [**Funcionamiento**](#DESC)
+
+- [**Sobre mí**](#DESC)
 
 <br>
 

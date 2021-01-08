@@ -30,7 +30,7 @@
 
 ## **Descripción** <a name="DESC"></a>
 
-_Ascensor y Console Manager_ es un proyecto formado por 3 componentes principales:
+_**Ascensor** y **Console Manager**_ es un proyecto formado por 3 componentes principales:
 
 - El módulo [`elevator_backend`][ELEVATOR_BACKEND] que describe el funcionamiento de un ascensor.
 
@@ -176,7 +176,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 - Demo [`Manual`][DEMO_MANUAL]: <a name="FUNC_D_M"></a>
 
     - Descripción del funcionamiento no disponible por el momento
-    - Prueba la Damo tú mismo ejecutando el programa [`Demos/Manual/Manual.exe`][DEMO_MANUAL_EXE]
+    - Prueba la Damo tú mismo descargando y ejecutando el programa [`Demos/Manual/Manual.exe`][DEMO_MANUAL_EXE]
 
 <br>
 

@@ -11,7 +11,18 @@
 
 <!-- ===== IMAGEN CABECERA ================================================== -->
 
-<!-- ##### -->
+[PYTHON]: https://www.python.org
+
+[PYGAME]: https://www.pygame.org
+[COLORAMA]: https://pypi.org/project/colorama
+[TERMINALTABLES]:https://pypi.org/project/terminaltables/
+[THREADING]: https://realpython.com/intro-to-python-threading
+
+[ELEVATOR_BACKEND]: https://github.com/marin-8/Ascensor-y-ConsoleManager/blob/main/Elevator_Backend/elevator_backend.py
+[CONSOLE_MANAGER]: https://github.com/marin-8/Ascensor-y-ConsoleManager/blob/main/Console_Manager/console_manager.py
+[DEMOS]: https://github.com/marin-8/Ascensor-y-ConsoleManager/tree/main/Demos
+[DEMO_MANUAL]: https://github.com/marin-8/Ascensor-y-ConsoleManager/tree/main/Demos/Manual
+[DEMO_MANUAL_EXE]: https://github.com/marin-8/Ascensor-y-ConsoleManager/blob/main/Demos/Manual/Manual.exe
 
 <!-- ===== DESCRIPCIÓN ================================================== -->
 
@@ -21,13 +32,13 @@
 
 _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principales:
 
-- El módulo `elevator_backend` que describe el funcionamiento de un ascensor.
+- El módulo [`elevator_backend`][ELEVATOR_BACKEND] que describe el funcionamiento de un ascensor.
 
-- El módulo `console_manager` que permite gestionar el control por comandos de cualquier aplicación Python.
+- El módulo [`console_manager`][CONSOLE_MANAGER] que permite gestionar el control por comandos de cualquier aplicación Python.
 
-- Las `Demos` que implementen cualquiera de los 2 componentes anteriores:
+- Las [`Demos`][DEMOS] que implementen cualquiera de los 2 componentes anteriores:
 
-    - La Demo `Manual` que representa un ascensor a tiempo real utilizando `pygame` para la visualización y el módulo `console_manager` para el control desde una ventana de consola estándar.
+    - La Demo [`Manual`][DEMO_MANUAL]que representa un ascensor a tiempo real utilizando [`pygame`][PYGAME] para la visualización y el módulo [`console_manager`][CONSOLE_MANAGER] para el control desde una ventana de consola estándar.
 
 <br>
 
@@ -69,7 +80,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 ## **Características principales** <a name="CAPR"></a>
 
-- Módulo `elevator_backend` : <a name="CAPR_EB"></a>
+- Módulo [`elevator_backend`][ELEVATOR_BACKEND] : <a name="CAPR_EB"></a>
 
     - Representación lógica de un ascensor
     - Función `add_target(target, source)` para simular:
@@ -77,7 +88,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
         - la pulsación de un botón dentro del ascensor
     - Función `next_step()` que avanza un paso en la simulación del ascensor
 
-- Módulo `console_manager` : <a name="CAPR_CM"></a>
+- Módulo [`console_manager`][CONSOLE_MANAGER] : <a name="CAPR_CM"></a>
 
     - Clase `Command` que describe la estructura de un comando
     - Clase `ConsoleManager` que permite:
@@ -85,10 +96,10 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
         - Pedir al usuario la introducción de comandos y gestionarlos con la función `consoleManager()` hasta que la aplicación se cierre
         - Visualizar con el comando `help` todos los comandos, su descripción y su sintaxis en una tabla 
 
-- Demo `Manual` : <a name="CAPR_D_M"></a>
+- Demo [`Manual`][DEMO_MANUAL]: <a name="CAPR_D_M"></a>
 
-    - Representación visual de un ascensor en una ventada de `pygame`
-    - Control a través de la introducción de comandos en una consola, gestionados por el módulo `console_manager`
+    - Representación visual de un ascensor en una ventada de [`pygame`][PYGAME]
+    - Control a través de la introducción de comandos en una consola, gestionados por el módulo [`console_manager`][CONSOLE_MANAGER]
     - Uso de `hilos` para separar la visualización del control
     - Cálculo del máximo número de pisos para el ascensor en base a la resolución vertical de la pantalla
     - Número de pisos introducido por el usuario
@@ -104,15 +115,15 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 ## **Tecnologías usadas** <a name="TEUS"></a>
 
-- Lenguaje: `Python` <a name="TEUS_L"></a>
+- Lenguaje: [`Python`][PYTHON] <a name="TEUS_L"></a>
 
-- Módulo `console_manager` : <a name="TEUS_CM"></a>
+- Módulo [`console_manager`][CONSOLE_MANAGER] : <a name="TEUS_CM"></a>
 
     - Módulos de terceros:
-        - `colorama` para imprimir en la consola en color
-        - `terminaltables` para mostrar los comandos disponibles en una tabla 
+        - [`colorama`][COLORAMA] para imprimir en la consola en color
+        - [`terminaltables`][TERMINALTABLES] para mostrar los comandos disponibles en una tabla 
 
-- Demo `Manual` : <a name="TEUS_D_M"></a>
+- Demo [`Manual`][DEMO_MANUAL]: <a name="TEUS_D_M"></a>
 
     - Módulos de Python:
 
@@ -122,11 +133,11 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
         - `os.environ` para:
             - ocultar lo que pygame imprime en la consola al iniciarse
             - modificar la posición de la ventana de pygame
-        - `threading` para ejecutar el control por comandos en un hilo distinto al principal
+        - [`threading`][THREADING] para ejecutar el control por comandos en un hilo distinto al principal
         - `win32api.GetSystemMetrics` para obtener la resolución de la pantalla
 
     - Módulos de terceros:
-        - `pygame` para la representación visual del ascensor
+        - [`pygame`][PYGAME] para la representación visual del ascensor
 
 <br>
 
@@ -138,7 +149,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 ## **Funcionamiento** <a name="FUNC"></a>
 
-- Módulo `elevator_backend` : <a name="FUNC_EB"></a>
+- Módulo [`elevator_backend`][ELEVATOR_BACKEND] : <a name="FUNC_EB"></a>
 
     - Función `add_target(target, source)` para añadir un objetivo para el ascensor
         - Parámetro `target` : número del piso objetivo
@@ -147,7 +158,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
             - `elevator` : simulando la pulsación de uno de los botones dentro del ascensor
     - Función `next_step()` para avanzar un paso en la simulación del ascensor
 
-- Módulo `console_manager` : <a name="FUNC_CM"></a>
+- Módulo [`console_manager`][CONSOLE_MANAGER] : <a name="FUNC_CM"></a>
 
     - Clase `Command` que describe la estructura de un comando
         - Parámetros del constructor:
@@ -162,10 +173,10 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
         - Función `addCommand(command)` que añade un comando de tipo `Command` al gestor
         - Función `consoleManager()` que está constantemente pidiendo al usuario la introducción comandos para ejecutar
 
-- Demo `Manual` : <a name="FUNC_D_M"></a>
+- Demo [`Manual`][DEMO_MANUAL]: <a name="FUNC_D_M"></a>
 
     - Descripción del funcionamiento no disponible por el momento
-    - Prueba la Damo tú mismo ejecutando el programa `Demos/Manual/Manual.exe`
+    - Prueba la Damo tú mismo ejecutando el programa [`Demos/Manual/Manual.exe`][DEMO_MANUAL_EXE]
 
 <br>
 

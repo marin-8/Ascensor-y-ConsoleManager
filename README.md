@@ -45,11 +45,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 - [**Tecnologías usadas**](#TEUS)
 
-- [**Motivación**](#MOTI)
-
-- [**Funcionamiento**](#OOOO)
-
-- [**Sobre mí**](#OOOO)
+- [**Funcionamiento**](#FUNC)
 
 <br>
 
@@ -61,7 +57,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 ## **Características principales** <a name="CAPR"></a>
 
-- Módulo `elevator_backend`:
+- Módulo `elevator_backend` :
 
     - Representación lógica de un ascensor
     - Función `add_target(target, source)` para simular:
@@ -69,16 +65,15 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
         - la pulsación de un botón dentro del ascensor
     - Función `next_step()` que avanza un paso en la simulación del ascensor
 
-- Módulo `console_manager`:
+- Módulo `console_manager` :
 
-    - Formado por 2 clases:
-        - La clase `Command` que describe la estructura de un comando
-        - La clase `ConsoleManager` que permite:
-            - Añadir comandos de tipo `Command` al gestor con la función `addCommand(command)`
-            - Pedir al usuario la introducción de comandos y gestionarlos con la función `consoleManager()` hasta que la aplicación se cierre
-            - Visualizar con el comando `help` todos los comandos, su descripción y su sintaxis en una tabla 
+    - Clase `Command` que describe la estructura de un comando
+    - Clase `ConsoleManager` que permite:
+        - Añadir comandos de tipo `Command` al gestor con la función `addCommand(command)`
+        - Pedir al usuario la introducción de comandos y gestionarlos con la función `consoleManager()` hasta que la aplicación se cierre
+        - Visualizar con el comando `help` todos los comandos, su descripción y su sintaxis en una tabla 
 
-- Demo `Manual`:
+- Demo `Manual` :
 
     - Cálculo del máximo número de pisos para el ascensor en base a la resolución vertical de la pantalla
     - Número de pisos introducido por el usuario
@@ -99,13 +94,13 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 - Lenguaje: `Python`
 
-- Módulo `console_manager`:
+- Módulo `console_manager` :
 
     - Módulos de terceros:
         - `colorama` para imprimir en la consola en color
         - `terminaltables` para mostrar los comandos disponibles en una tabla 
 
-- Demo `Manual`:
+- Demo `Manual` :
 
     - Módulos de Python:
 
@@ -125,18 +120,42 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 ---
 
-<!-- ===== MOTIVACIÓN ================================================== -->
+<!-- ===== Funcionamiento ================================================== -->
 
 <br>
 
-## **Motivación** <a name="MOTI"></a>
+## **Funcionamiento** <a name="FUNC"></a>
+
+- Módulo `elevator_backend` :
+
+    - Función `add_target(target, source)` para añadir un objetivo para el ascensor
+        - Parámetro `target` : número del piso objetivo
+        - Parámetro `source` : fuente de la llamada, que puede ser:
+            - `floor` : simulando la llamada al ascensor desde un rellano
+            - `elevator` : simulando la pulsación de uno de los botones dentro del ascensor
+    - Función `next_step()` para avanzar un paso en la simulación del ascensor
+
+- Módulo `console_manager` :
+
+    - Clase `Command` que describe la estructura de un comando
+        - Parámetros del constructor:
+            - `name` : nombre del comando
+            - `short` : abreviación del comando
+            - `action` : función a ejecutar cuando se llame al comando
+            - `syntax` : sintaxis del comando
+            - `description` : descripción del comando
+        - Función `execute(arguments)` que ejecuta la acción del comando en base a unos argumentos (vacíos si innecesarios)
+
+    - Clase `ConsoleManager` para la gestión de los comandos que se le introduzcan
+        - Función `addCommand(command)` que añade un comando de tipo `Command` al gestor
+        - Función `consoleManager()` que está constantemente pidiendo al usuario la introducción comandos para ejecutar
 
 <br>
 
 ---
 
 <!-- ===== BASE ================================================== -->
-
+<!--
 <br>
 
 ## **BASE** <a name="OOOO"></a>
@@ -144,5 +163,5 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 <br>
 
 ---
-
+-->
 <!-- ===== ===== ================================================== -->

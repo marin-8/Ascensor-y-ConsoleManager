@@ -27,7 +27,7 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 - Las `Demos` que implementen cualquiera de los 2 componentes anteriores:
 
-    - La demo `Manual` que representa un ascensor a tiempo real utilizando `Pygame` para la visualización y el módulo `console_manager` para el control desde una ventana de consola estándar.
+    - La Demo `Manual` que representa un ascensor a tiempo real utilizando `pygame` para la visualización y el módulo `console_manager` para el control desde una ventana de consola estándar.
 
 <br>
 
@@ -87,11 +87,11 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 - Demo `Manual` : <a name="CAPR_D_M"></a>
 
-    - Cálculo del máximo número de pisos para el ascensor en base a la resolución vertical de la pantalla
-    - Número de pisos introducido por el usuario
-    - Representación visual en una ventada de `Pygame`
+    - Representación visual de un ascensor en una ventada de `pygame`
     - Control a través de la introducción de comandos en una consola, gestionados por el módulo `console_manager`
     - Uso de `hilos` para separar la visualización del control
+    - Cálculo del máximo número de pisos para el ascensor en base a la resolución vertical de la pantalla
+    - Número de pisos introducido por el usuario
     - Diferenciación por colores de los distintos tipos de mensajes en la consola
 
 <br>

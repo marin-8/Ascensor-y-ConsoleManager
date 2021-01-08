@@ -112,9 +112,9 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
         - `colorama` para imprimir en la consola en color
         - `terminaltables` para mostrar los comandos disponibles en una tabla 
 
-- Demo `Manual` :
+- Demo `Manual` : <a name="TEUS_D_M"></a>
 
-    - Módulos de Python: <a name="TEUS_D_M"></a>
+    - Módulos de Python:
 
         - `os.system` para:
             - modificar el tamaño inicial de la consola
@@ -164,7 +164,8 @@ _Ascensor y Console Manager_ es un proyecto formado por 3 componentes principale
 
 - Demo `Manual` : <a name="FUNC_D_M"></a>
 
-    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum, purus at rutrum dictum, velit lectus pulvinar leo, eu consequat lectus orci vel massa. Donec at lacus eu purus posuere bibendum. Maecenas facilisis mi justo, eu tempor dui semper sed. Donec imperdiet mattis lacus, vitae dapibus sem facilisis sit amet. Mauris convallis purus non justo iaculis molestie. Cras luctus odio malesuada hendrerit euismod.
+    - Descripción del funcionamiento no disponible por el momento
+    - Prueba la Damo tú mismo ejecutando el programa `Demos/Manual/Manual.exe`
 
 <br>
 

@@ -1,16 +1,6 @@
 
 <!-- ===== REFERENCIAS ================================================== -->
 
-<!-- ##### -->
-
-<!-- ===== TÍTULO ================================================== -->
-
----
-# **Ascensor** y **Console Manager**
----
-
-<!-- ===== IMAGEN CABECERA ================================================== -->
-
 [PYTHON]: https://www.python.org
 
 [PYGAME]: https://www.pygame.org
@@ -23,6 +13,16 @@
 [DEMOS]: https://github.com/marin-8/Ascensor-y-ConsoleManager/tree/main/Demos
 [DEMO_MANUAL]: https://github.com/marin-8/Ascensor-y-ConsoleManager/tree/main/Demos/Manual
 [DEMO_MANUAL_EXE]: https://github.com/marin-8/Ascensor-y-ConsoleManager/blob/main/Demos/Manual/Manual.exe
+
+<!-- ===== TÍTULO ================================================== -->
+
+---
+# **Ascensor** y **Console Manager**
+---
+
+<!-- ===== IMAGEN CABECERA ================================================== -->
+
+<!-- ##### -->
 
 <!-- ===== DESCRIPCIÓN ================================================== -->
 
@@ -38,7 +38,7 @@ _**Ascensor** y **Console Manager**_ es un proyecto formado por 3 componentes pr
 
 - Las [`Demos`][DEMOS] que implementen cualquiera de los 2 componentes anteriores:
 
-    - La Demo [`Manual`][DEMO_MANUAL]que representa un ascensor a tiempo real utilizando [`pygame`][PYGAME] para la visualización y el módulo [`console_manager`][CONSOLE_MANAGER] para el control desde una ventana de consola estándar.
+    - La Demo [`Manual`][DEMO_MANUAL] que representa un ascensor a tiempo real utilizando [`pygame`][PYGAME] para la visualización y el módulo [`console_manager`][CONSOLE_MANAGER] para el control desde una ventana de consola estándar.
 
 <br>
 
@@ -96,7 +96,7 @@ _**Ascensor** y **Console Manager**_ es un proyecto formado por 3 componentes pr
         - Pedir al usuario la introducción de comandos y gestionarlos con la función `consoleManager()` hasta que la aplicación se cierre
         - Visualizar con el comando `help` todos los comandos, su descripción y su sintaxis en una tabla 
 
-- Demo [`Manual`][DEMO_MANUAL]: <a name="CAPR_D_M"></a>
+- Demo [`Manual`][DEMO_MANUAL] : <a name="CAPR_D_M"></a>
 
     - Representación visual de un ascensor en una ventada de [`pygame`][PYGAME]
     - Control a través de la introducción de comandos en una consola, gestionados por el módulo [`console_manager`][CONSOLE_MANAGER]
@@ -123,7 +123,7 @@ _**Ascensor** y **Console Manager**_ es un proyecto formado por 3 componentes pr
         - [`colorama`][COLORAMA] para imprimir en la consola en color
         - [`terminaltables`][TERMINALTABLES] para mostrar los comandos disponibles en una tabla 
 
-- Demo [`Manual`][DEMO_MANUAL]: <a name="TEUS_D_M"></a>
+- Demo [`Manual`][DEMO_MANUAL] : <a name="TEUS_D_M"></a>
 
     - Módulos de Python:
 
@@ -173,7 +173,7 @@ _**Ascensor** y **Console Manager**_ es un proyecto formado por 3 componentes pr
         - Función `addCommand(command)` que añade un comando de tipo `Command` al gestor
         - Función `consoleManager()` que está constantemente pidiendo al usuario la introducción comandos para ejecutar
 
-- Demo [`Manual`][DEMO_MANUAL]: <a name="FUNC_D_M"></a>
+- Demo [`Manual`][DEMO_MANUAL] : <a name="FUNC_D_M"></a>
 
     - Descripción del funcionamiento no disponible por el momento
     - Prueba la Damo tú mismo descargando y ejecutando el programa [`Demos/Manual/Manual.exe`][DEMO_MANUAL_EXE]
